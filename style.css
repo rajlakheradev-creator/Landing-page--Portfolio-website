@@ -18,7 +18,7 @@ body {
    2. HEADER (Raj's Portfolio)
    =========================== */
 header#main-header {
-    background-image: url(header.png);
+    background-image: url(/public/header.png);
     min-height: 180px; 
     display: flex;     
     align-items: center;
@@ -318,7 +318,7 @@ text-shadow: 0px 0px 1px #0F0326;
    =========================== */
 section#contact {
     background-color: #5a4583;
-    background-image: url(Gemini_Generated_Image_ogtbgcogtbgcogtb.png);
+    background-image: url(/public/ger.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
