@@ -6,8 +6,21 @@
     <title>Raj's Portfolio</title>
     <meta name="description" content="Raj Lakhera's personal portfolio showcasing skills, certificates, and contact info.">
     <meta name="author" content="Raj Lakhera">
-<!-- Add to <head> in index.html -->
-<link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Raj's Portfolio - Computer Science Student">
+    <meta property="og:description" content="Explore my projects, certificates, and skills in web development, cybersecurity, and cloud computing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="public/profilepic.png">
+
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -29,27 +42,25 @@
     </nav>
 
     <section id="Home">
-
         <div class="hero-content">
             <div class="hero-text">
-    <h1>Welcome to My <br> Portfolio</h1>
-    </div>
+                <h1>Welcome to My <br> Portfolio</h1>
+            </div>
             
             <div class="profile-card">
-                <img src="profilepic.png" alt="Raj Lakhera standing reading a book">
+                <img src="public/profilepic.png" alt="Raj Lakhera standing reading a book">
                 <div class="t">
                     <h2>Hi, I am Raj!</h2>
                     <p class="subtitle">I am passionate about technology and love to learn new skills.</p>
                 </div>
             </div>
         </div>
-        
     </section>
 
     <section id="about">
         <div class="container">
             <p>
-                Hi, I’m <strong>Raj Lakhera</strong>, a 19-year-old Computer Science student at Gyan Ganga College of Technology.<br>
+                Hi, I'm <strong>Raj Lakhera</strong>, a 19-year-old Computer Science student at Gyan Ganga College of Technology.<br>
                 This is my official portfolio website.
                 <br><br>
                 Explore my achievements in the <strong>Certificates</strong> section, check out my skills in <strong>Skills</strong>, and feel free to reach out via <strong>Contact</strong>.
@@ -58,42 +69,35 @@
     </section>
 
     <section id="Certificates">
-
         <div class="container">
             <h1>Certificate List:</h1>
 
             <ul>
-
                 <li>
-                    <h2>Ui-path RPA developer Certificate</h2>
-                    <img src="/public/r1.JPG" alt="" class="imager1">
-                
+                    <h2>UI-Path RPA Developer Certificate</h2>
+                    <img src="public/r1.JPG" alt="UI-Path RPA Developer Certificate" class="imager1">
                 </li>
                 <li>
-                    <h2>Zero Trust cloud security Certificate</h2>
-                    <img src="/public/r2.JPG" alt="Zero Trust cloud security Certificate" class="imager1">
+                    <h2>Zero Trust Cloud Security Certificate</h2>
+                    <img src="public/r2.JPG" alt="Zero Trust Cloud Security Certificate" class="imager1">
                 </li>
                 <li>
                     <h2>Palo Alto Networks Certified Cybersecurity Associate</h2>
-                    <img src="/public/r3.JPG" alt="Palo Alto Networks Certified Cybersecurity Certificate" class="imager1">
-
+                    <img src="public/r3.JPG" alt="Palo Alto Networks Certified Cybersecurity Associate Certificate" class="imager1">
                 </li>
-                
                 <li>
                     <h2>Cisco Cybersecurity Essentials Certificate</h2>
-                    <img src="/public/r5.JPG" alt="Cisco Cybersecurity Essentials Certificate" class="imager2">
+                    <img src="public/r5.JPG" alt="Cisco Cybersecurity Essentials Certificate" class="imager2">
                 </li>
                 <li>
                     <h2>Google Android Developer Certificate</h2>
-                    <img src="/public/r6.JPG" alt="Google Android Developer Certificate" class="imager1">
+                    <img src="public/r6.JPG" alt="Google Android Developer Certificate" class="imager1">
                 </li>
                 <li>
-                    <h2>Ali-baba cloud-computing Certificate</h2>
-                    <img src="/public/r7.JPG" alt="Ali-baba cloud-computing Certificate" class="imager2">
+                    <h2>Alibaba Cloud Computing Certificate</h2>
+                    <img src="public/r7.JPG" alt="Alibaba Cloud Computing Certificate" class="imager2">
                 </li>
-
             </ul>
-
         </div>
     </section>
 
@@ -110,23 +114,36 @@
         </div>
     </section>
 
-<section id="Projects">
-    <div class="container">
-        <h1>
-          My  Projects !!
-        </h1>
-        <ul>
-            <li><strong><a href="https://landing-page-portfolio-website.vercel.app/">Habit tracker</a></strong> 
-Developed AI-powered habit tracking web application using Next.js, React, and Anthropic Claude API with real-time generative AI for personalized content. Implemented RESTful API integration, state management with React Hooks, localStorage for data persistence, and responsive design using Tailwind CSS. Features include machine learning-based recommendations, real-time analytics dashboard, JSON data processing, and dynamic UI components with 90%+ mobile optimization.</li>
-            <li><strong><a href="https://stock-psychic.vercel.app/">Stock Psychic</a></strong> 
-AI-powered stock analysis tool built with Next.js and React. Uses Anthropic Claude API for intelligent market insights and predictions. Features real-time data processing, interactive charts, technical analysis, and responsive UI design.</li>
-            <li><strong>Project 3:</strong> Description of project 3.</li>
-            <li><strong>Project 4:</strong> Description of project 4.</li>
-            <li><strong>Project 5:</strong> Description of project 5.</li>
-        </ul>
-    </div>
-</section>
-
+    <section id="Projects">
+        <div class="container">
+            <h1>My Projects</h1>
+            <ul>
+                <li>
+                    <div class="project-image">
+                        <img src="public/habit-tracker.png" alt="Habit Tracker Application Screenshot">
+                    </div>
+                    <h2>Habit Tracker</h2>
+                    <p>Developed AI-powered habit tracking web application using Next.js, React, and Anthropic Claude API with real-time generative AI for personalized content. Implemented RESTful API integration, state management with React Hooks, localStorage for data persistence, and responsive design using Tailwind CSS. Features include machine learning-based recommendations, real-time analytics dashboard, JSON data processing, and dynamic UI components with 90%+ mobile optimization.</p>
+                    <a href="https://landing-page-portfolio-website.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">View Live Project →</a>
+                </li>
+                
+                <li>
+                    <div class="project-image">
+                        <img src="public/stock-psychic.png" alt="Stock Psychic Application Screenshot">
+                    </div>
+                    <h2>Stock Psychic</h2>
+                    <p>AI-powered stock analysis tool built with Next.js and React. Uses Anthropic Claude API for intelligent market insights and predictions. Features real-time data processing, interactive charts, technical analysis, and responsive UI design with mobile optimization.</p>
+                    <a href="https://stock-psychic.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">View Live Project →</a>
+                </li>
+                
+                <li class="coming-soon-card">
+                    <div class="coming-soon-icon">🚀</div>
+                    <h2>More Projects Coming Soon</h2>
+                    <p>I'm currently working on exciting new projects. Check back soon to see what I'm building!</p>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     <section id="contact">
         <div class="container">
