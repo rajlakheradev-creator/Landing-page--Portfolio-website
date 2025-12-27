@@ -3,24 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj's Portfolio</title>
-    <meta name="description" content="Raj Lakhera's personal portfolio showcasing skills, certificates, and contact info.">
+    <title>Raj's Portfolio | Computer Science Student & Developer</title>
+    <meta name="description" content="Raj Lakhera's personal portfolio showcasing skills in web development, cybersecurity, cloud computing, and AI. View certificates, projects, and contact info.">
     <meta name="author" content="Raj Lakhera">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#667eea">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:title" content="Raj's Portfolio - Computer Science Student">
     <meta property="og:description" content="Explore my projects, certificates, and skills in web development, cybersecurity, and cloud computing.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:image" content="public/profilepic.png">
-
+    <meta property="og:url" content="http://www.rajlakheraportfolio.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Raj's Portfolio - Computer Science Student">
+    <meta name="twitter:description" content="Explore my projects, certificates, and skills in web development, cybersecurity, and cloud computing.">
+    <meta name="twitter:image" content="public/profilepic.png">
+    
+    <meta name="keywords" content="Raj Lakhera, Portfolio, Computer Science, Certificates, Skills, Projects, Contact, Web Development, Cybersecurity, Cloud Computing, Python, Java, React, Next.js, AI Developer">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Raj Lakhera",
+      "jobTitle": "Computer Science Student",
+      "url": "http://www.rajlakheraportfolio.com",
+      "email": "rajlakhera18@gmail.com",
+      "telephone": "+919630157882",
+      "image": "public/profilepic.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/raj-lakhera-a85098298/",
+        "https://github.com/rajlakheradev-creator"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Gyan Ganga College of Technology"
+      },
+      "knowsAbout": ["Web Development", "Cybersecurity", "Cloud Computing", "Python", "Java", "React", "Next.js"]
+    }
+    </script>
+    
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -30,133 +63,246 @@
         <h1>Raj's Portfolio</h1>
     </header>
 
-    <nav id="navbar">
+    <nav id="navbar" aria-label="Main Navigation">
         <ul>
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#about">About</a></li> 
-            <li><a href="#Certificates">Certificates</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#Projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#Home" aria-label="Go to Home section">Home</a></li>
+            <li><a href="#about" aria-label="Go to About section">About</a></li> 
+            <li><a href="#Certificates" aria-label="Go to Certificates section">Certificates</a></li>
+            <li><a href="#skills" aria-label="Go to Skills section">Skills</a></li>
+            <li><a href="#Projects" aria-label="Go to Projects section">Projects</a></li>
+            <li><a href="#contact" aria-label="Go to Contact section">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="Home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Welcome to My <br> Portfolio</h1>
-            </div>
-            
-            <div class="profile-card">
-                <img src="public/profilepic.png" alt="Raj Lakhera standing reading a book">
-                <div class="t">
-                    <h2>Hi, I am Raj!</h2>
-                    <p class="subtitle">I am passionate about technology and love to learn new skills.</p>
+    <main>
+        <section id="Home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Welcome to My <br> Portfolio</h1>
+                </div>
+                
+                <div class="profile-card">
+                    <img src="public/profilepic.png" alt="Raj Lakhera - Computer Science Student Profile Picture" class="profile-pic" width="300" height="300">
+                    <div class="t">
+                        <h2>Hi, I am Raj!</h2>
+                        <p class="subtitle">I am passionate about technology and love to learn new skills.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <div class="container">
-            <p>
-                Hi, I'm <strong>Raj Lakhera</strong>, a 19-year-old Computer Science student at Gyan Ganga College of Technology.<br>
-                This is my official portfolio website.
-                <br><br>
-                Explore my achievements in the <strong>Certificates</strong> section, check out my skills in <strong>Skills</strong>, and feel free to reach out via <strong>Contact</strong>.
-            </p>
-        </div>
-    </section>
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    Hi, I'm <strong>Raj Lakhera</strong>, a 19-year-old Computer Science student at Gyan Ganga College of Technology.<br>
+                    This is my official portfolio website.
+                    <br><br>
+                    I specialize in building modern web applications using cutting-edge technologies like React, Next.js, and AI integration. 
+                    My expertise spans across multiple domains including web development, cybersecurity, cloud computing, and artificial intelligence.
+                    <br><br>
+                    With hands-on experience in developing AI-powered applications and a strong foundation in programming languages like Python, Java, and C++, 
+                    I am committed to creating innovative solutions that make a difference.
+                    <br><br>
+                    Explore my achievements in the <strong>Certificates</strong> section, check out my technical skills in <strong>Skills</strong>, 
+                    view my latest projects in <strong>Projects</strong>, and feel free to reach out via <strong>Contact</strong>.
+                </p>
+            </div>
+        </section>
 
-    <section id="Certificates">
-        <div class="container">
-            <h1>Certificate List:</h1>
+        <section id="Certificates">
+            <div class="container">
+                <h2>Certificate List:</h2>
 
-            <ul>
-                <li>
-                    <h2>UI-Path RPA Developer Certificate</h2>
-                    <img src="public/r1.JPG" alt="UI-Path RPA Developer Certificate" class="imager1">
-                </li>
-                <li>
-                    <h2>Zero Trust Cloud Security Certificate</h2>
-                    <img src="public/r2.JPG" alt="Zero Trust Cloud Security Certificate" class="imager1">
-                </li>
-                <li>
-                    <h2>Palo Alto Networks Certified Cybersecurity Associate</h2>
-                    <img src="public/r3.JPG" alt="Palo Alto Networks Certified Cybersecurity Associate Certificate" class="imager1">
-                </li>
-                <li>
-                    <h2>Cisco Cybersecurity Essentials Certificate</h2>
-                    <img src="public/r5.JPG" alt="Cisco Cybersecurity Essentials Certificate" class="imager2">
-                </li>
-                <li>
-                    <h2>Google Android Developer Certificate</h2>
-                    <img src="public/r6.JPG" alt="Google Android Developer Certificate" class="imager1">
-                </li>
-                <li>
-                    <h2>Alibaba Cloud Computing Certificate</h2>
-                    <img src="public/r7.JPG" alt="Alibaba Cloud Computing Certificate" class="imager2">
-                </li>
-            </ul>
-        </div>
-    </section>
+                <ul>
+                    <li>
+                        <h3>UI-Path RPA Developer Certificate</h3>
+                        <p><strong>Issued by:</strong> UiPath</p>
+                        <p><strong>Skills:</strong> Robotic Process Automation, Workflow Design, Automation Development</p>
+                        <img src="public/r1.JPG" alt="UI-Path RPA Developer Certificate - Raj Lakhera" class="imager1" loading="lazy" width="800" height="600">
+                    </li>
+                    <li>
+                        <h3>Zero Trust Cloud Security Certificate</h3>
+                        <p><strong>Issued by:</strong> Cloud Security Alliance</p>
+                        <p><strong>Skills:</strong> Zero Trust Architecture, Cloud Security, Network Security</p>
+                        <img src="public/r2.JPG" alt="Zero Trust Cloud Security Certificate - Raj Lakhera" class="imager1" loading="lazy" width="800" height="600">
+                    </li>
+                    <li>
+                        <h3>Palo Alto Networks Certified Cybersecurity Associate</h3>
+                        <p><strong>Issued by:</strong> Palo Alto Networks</p>
+                        <p><strong>Skills:</strong> Cybersecurity Fundamentals, Network Security, Threat Prevention</p>
+                        <img src="public/r3.JPG" alt="Palo Alto Networks Certified Cybersecurity Associate Certificate - Raj Lakhera" class="imager1" loading="lazy" width="800" height="600">
+                    </li>
+                    <li>
+                        <h3>Cisco Cybersecurity Essentials Certificate</h3>
+                        <p><strong>Issued by:</strong> Cisco Networking Academy</p>
+                        <p><strong>Skills:</strong> Cybersecurity Essentials, Network Defense, Security Operations</p>
+                        <img src="public/r5.JPG" alt="Cisco Cybersecurity Essentials Certificate - Raj Lakhera" class="imager2" loading="lazy" width="800" height="600">
+                    </li>
+                    <li>
+                        <h3>Google Android Developer Certificate</h3>
+                        <p><strong>Issued by:</strong> Google</p>
+                        <p><strong>Skills:</strong> Android Development, Mobile Application Development, Java/Kotlin</p>
+                        <img src="public/r6.JPG" alt="Google Android Developer Certificate - Raj Lakhera" class="imager1" loading="lazy" width="800" height="600">
+                    </li>
+                    <li>
+                        <h3>Alibaba Cloud Computing Certificate</h3>
+                        <p><strong>Issued by:</strong> Alibaba Cloud</p>
+                        <p><strong>Skills:</strong> Cloud Computing, Cloud Architecture, Cloud Services</p>
+                        <img src="public/r7.JPG" alt="Alibaba Cloud Computing Certificate - Raj Lakhera" class="imager2" loading="lazy" width="800" height="600">
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-    <section id="skills">
-        <div class="container">
-            <h1>SKILLS</h1>
-            <ul>
-                <li><strong>Programming Languages:</strong> C++, Java, Python</li>
-                <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript</li>
-                <li><strong>Data Entry:</strong> Excel, Google Sheets, Google Docs</li>
-                <li><strong>Databases:</strong> MySQL, MongoDB</li>
-                <li><strong>Tools:</strong> Git, GitHub, VS Code, PowerPoint</li>
-            </ul>
-        </div>
-    </section>
+        <section id="skills">
+            <div class="container">
+                <h2>SKILLS</h2>
+                <article>
+                    <ul>
+                        <li class="headings">
+                            <strong>Programming Languages:</strong>
+                            <ul>
+                                <li><i class="f1"></i> Python - Advanced proficiency in backend development, data analysis, and AI/ML</li>
+                                <li><i class="f2"></i> Java - Object-oriented programming, Android development</li>
+                                <li><i class="f3"></i> C++ - System programming and algorithm implementation</li>
+                                <li><i class="f4"></i> C - Low-level programming and embedded systems</li>
+                            </ul>
+                        </li>
+                        <li class="headings">
+                            <strong>Web Technologies:</strong>
+                            <ul>
+                                <li><i class="f5"></i> HTML - Semantic markup and accessibility standards</li>
+                                <li><i class="f6"></i> CSS - Modern styling, responsive design, animations</li>
+                                <li><i class="f7"></i> JavaScript - ES6+, React, Next.js, Node.js</li>
+                            </ul>
+                        </li>
+                        <li class="headings">
+                            <strong>Data Entry:</strong>
+                            <ul>
+                                <li><i class="f8"></i> Excel - Advanced formulas, pivot tables, data visualization</li>
+                                <li><i class="f9"></i> Google Docs - Collaborative document editing and management</li>
+                            </ul>
+                        </li>
+                        <li class="headings">
+                            <strong>Databases:</strong>
+                            <ul>
+                                <li><i class="f10"></i> MySQL - Relational database design and SQL queries</li>
+                                <li><i class="f11"></i> MongoDB - NoSQL database, document-based storage</li>
+                            </ul>
+                        </li>
+                        <li class="headings">
+                            <strong>Tools & Frameworks:</strong>
+                            <ul>
+                                <li><i class="f12"></i> Git - Version control and collaboration</li>
+                                <li><i class="f13"></i> GitHub - Code repository and project management</li>
+                                <li><i class="f14"></i> VS Code - Primary development environment</li>
+                                <li><i class="f15"></i> PowerPoint - Technical presentations and documentation</li>
+                            </ul>
+                        </li>
+                        <li class="headings">
+                            <strong>Additional Skills:</strong>
+                            <ul>
+                                <li>React.js & Next.js - Modern frontend frameworks</li>
+                                <li>RESTful API Development - Backend services integration</li>
+                                <li>Tailwind CSS - Utility-first CSS framework</li>
+                                <li>AI Integration - Anthropic Claude API, OpenAI</li>
+                                <li>Responsive Web Design - Mobile-first approach</li>
+                                <li>Cloud Services - AWS, Alibaba Cloud</li>
+                                <li>Cybersecurity - Network security, threat prevention</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
-    <section id="Projects">
-        <div class="container">
-            <h1>My Projects</h1>
-            <ul>
-                <li>
-                    <div class="project-image">
-                        <img src="public/habit-tracker.png" alt="Habit Tracker Application Screenshot">
-                    </div>
-                    <h2>Habit Tracker</h2>
-                    <p>Developed AI-powered habit tracking web application using Next.js, React, and Anthropic Claude API with real-time generative AI for personalized content. Implemented RESTful API integration, state management with React Hooks, localStorage for data persistence, and responsive design using Tailwind CSS. Features include machine learning-based recommendations, real-time analytics dashboard, JSON data processing, and dynamic UI components with 90%+ mobile optimization.</p>
-                    <a href="https://landing-page-portfolio-website.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">View Live Project →</a>
-                </li>
-                
-                <li>
-                    <div class="project-image">
-                        <img src="public/stock-psychic.png" alt="Stock Psychic Application Screenshot">
-                    </div>
-                    <h2>Stock Psychic</h2>
-                    <p>AI-powered stock analysis tool built with Next.js and React. Uses Anthropic Claude API for intelligent market insights and predictions. Features real-time data processing, interactive charts, technical analysis, and responsive UI design with mobile optimization.</p>
-                    <a href="https://stock-psychic.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">View Live Project →</a>
-                </li>
-                
-                <li class="coming-soon-card">
-                    <div class="coming-soon-icon">🚀</div>
-                    <h2>More Projects Coming Soon</h2>
-                    <p>I'm currently working on exciting new projects. Check back soon to see what I'm building!</p>
-                </li>
-            </ul>
-        </div>
-    </section>
+        <section id="Projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <ul>
+                    <li>
+                        <article>
+                            <div class="project-image">
+                                <img src="public/habit-tracker.png" alt="Habit Tracker Application Screenshot showing AI-powered interface" width="1200" height="675" loading="lazy">
+                            </div>
+                            <h3>Habit Tracker - AI-Powered Productivity App</h3>
+                            <p>
+                                <strong>Description:</strong> Developed AI-powered habit tracking web application using Next.js, React, and Anthropic Claude API with real-time generative AI for personalized content. 
+                                Implemented RESTful API integration, state management with React Hooks, localStorage for data persistence, and responsive design using Tailwind CSS. 
+                                Features include machine learning-based recommendations, real-time analytics dashboard, JSON data processing, and dynamic UI components with 90%+ mobile optimization.
+                            </p>
+                            <p><strong>Technologies Used:</strong> Next.js, React, Anthropic Claude API, Tailwind CSS, JavaScript, REST API, JSON</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Real-time AI-generated personalized recommendations</li>
+                                <li>Interactive analytics dashboard with progress tracking</li>
+                                <li>Responsive design optimized for mobile devices</li>
+                                <li>Local data persistence for offline functionality</li>
+                            </ul>
+                            <p><strong>Live Demo:</strong> <a href="https://landing-page-portfolio-website.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn" aria-label="View Habit Tracker live project">View Live Project →</a></p>
+                        </article>
+                    </li>
+                    
+                    <li>
+                        <article>
+                            <div class="project-image">
+                                <img src="public/stock-psychic.png" alt="Stock Psychic Application Screenshot showing market analysis interface" width="1200" height="675" loading="lazy">
+                            </div>
+                            <h3>Stock Psychic - AI Stock Analysis Platform</h3>
+                            <p>
+                                <strong>Description:</strong> AI-powered stock analysis tool built with Next.js and React. Uses Anthropic Claude API for intelligent market insights and predictions. 
+                                Features real-time data processing, interactive charts, technical analysis, and responsive UI design with mobile optimization.
+                            </p>
+                            <p><strong>Technologies Used:</strong> Next.js, React, Anthropic Claude API, Chart.js, Tailwind CSS, JavaScript</p>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>AI-driven market analysis and predictions</li>
+                                <li>Real-time stock data visualization</li>
+                                <li>Technical indicators and trend analysis</li>
+                                <li>Interactive charts and graphs</li>
+                            </ul>
+                            <p><strong>Live Demo:</strong> <a href="https://stock-psychic.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn" aria-label="View Stock Psychic live project">View Live Project →</a></p>
+                        </article>
+                    </li>
+                    
+                    <li class="coming-soon-card">
+                        <article>
+                            <div class="coming-soon-icon" aria-hidden="true">🚀</div>
+                            <h3>More Projects Coming Soon</h3>
+                            <p>I'm currently working on exciting new projects including:</p>
+                            <ul>
+                                <li>E-commerce platform with AI recommendations</li>
+                                <li>Real-time chat application with WebSocket</li>
+                                <li>Portfolio management dashboard</li>
+                                <li>Machine learning model deployment platform</li>
+                            </ul>
+                            <p>Check back soon to see what I'm building!</p>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-    <section id="contact">
-        <div class="container">
-            <h1>Wanna contact me?</h1>
-            <p>EMAIL: <a href="mailto:rajlakhera18@gmail.com">rajlakhera18@gmail.com</a></p>
-            <p>Phone: <a href="tel:+919630157882">9630157882</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/raj-lakhera-a85098298/" target="_blank" rel="noopener noreferrer">Raj Lakhera</a></p>
-            <p>GitHub: <a href="https://github.com/rajlakheradev-creator" target="_blank" rel="noopener noreferrer">rajlakheradev-creator</a></p>
-        </div>
-    </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Wanna contact me?</h2>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through any of the following channels:</p>
+                <address>
+                    <p><strong>EMAIL:</strong> <a href="mailto:rajlakhera18@gmail.com" aria-label="Send email to Raj Lakhera">rajlakhera18@gmail.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+919630157882" aria-label="Call Raj Lakhera">+91 9630157882</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/raj-lakhera-a85098298/" target="_blank" rel="noopener noreferrer" aria-label="Visit Raj Lakhera's LinkedIn profile">Raj Lakhera</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/rajlakheradev-creator" target="_blank" rel="noopener noreferrer" aria-label="Visit Raj Lakhera's GitHub profile">rajlakheradev-creator</a></p>
+                </address>
+                <p><strong>Location:</strong> Airoli, Maharashtra, India</p>
+                <p><strong>Available for:</strong> Freelance projects, collaborations, internships, and full-time opportunities</p>
+            </div>
+        </section>
+    </main>
 
     <footer id="main-footer">
-        <p>Copyright &copy; 2025 Raj Lakhera</p>
+        <p>Copyright &copy; 2025 Raj Lakhera. All rights reserved.</p>
+        <p>Built with passion using HTML, CSS, and JavaScript</p>
     </footer>
 
     <script src="script.js"></script>
