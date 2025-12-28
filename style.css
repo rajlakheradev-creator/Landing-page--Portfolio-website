@@ -4,9 +4,17 @@
 html {
     scroll-behavior: smooth;
 }
+:root{
+    --primary:#0F0326;
+    --secondary:#E65F5C;
+    --accent:#FFFF82;
+    --bg-light:#F5F7DC;
+    --card-light:#ffffff;
+    --card-soft:#B5D99C;
+}
 
 body {
-    background-color: #F5F7DC; 
+    background-color: var(--bg-light); 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px; 
     line-height: 1.6em;
@@ -25,7 +33,6 @@ header#main-header {
     justify-content: center;
     text-align: center;
     color: white;
-    border-bottom: 5px solid #E65F5C;
 }
 
 header#main-header h1 {
@@ -41,7 +48,7 @@ header#main-header h1 {
    3. NAVIGATION BAR
    =========================== */
 nav#navbar {
-    background-color: #1a1a1a;
+    background-color: var(--primary);
     padding: 10px 0;
     text-align: center;
     position: sticky;
@@ -57,7 +64,6 @@ nav#navbar ul {
 
 nav#navbar ul li {
     display: inline-block;
-    border: 2px solid #B5D99C;
     padding: 5px 15px; 
     margin: 0 5px;     
     border-radius: 6px;
@@ -75,7 +81,7 @@ nav#navbar ul li a {
 }
 
 nav#navbar ul li:hover {
-    background-color: #B5D99C;
+    background-color: var(--accent);
     transform: translateY(-2px);
     cursor: pointer;
 }
@@ -106,9 +112,8 @@ section {
    5. HOME SECTION
    =========================== */
 #Home {
-    background: linear-gradient(135deg, #E65F5C 0%, #0F0326 100%);
+    background: linear-gradient(135deg, var(--primary) , var(--secondary));
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -136,7 +141,7 @@ section {
     border-radius: 15px;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid var(--primary);
     max-width: 300px;
 }
 
@@ -145,7 +150,6 @@ section {
     height: 160px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #FFFF82;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     margin-bottom: 15px;
     transition: transform 0.3s ease;
@@ -172,9 +176,8 @@ section {
    6. ABOUT SECTION
    =========================== */
 section#about {
-    background-color: #FFFF82;
+    background-color: var(--bg-light);
     color: #0F0326;
-    border: 2px solid #0F0326;
     text-align: center;
     font-size: 18px; 
 }
@@ -187,47 +190,26 @@ section#about p {
    7. CERTIFICATES SECTION (UPDATED FOR ROW VIEW)
    =========================== */
 section#Certificates {
-    background-color: #B5D99C;
-    color: #0F0326;
-    border: 2px solid #0F0326;
+    background-color: var(--bg-light);
+    border: none;
+    text-align: center;
 }
 
 section#Certificates h1 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #0F0326;
-    display: inline-block;
+    color: var(--primary);
+    margin-bottom: 25px;
 }
 
 /* CHANGED: Added Flexbox to the UL */
 section#Certificates ul {
     list-style-type: none;
     padding: 0;
-    /* Flexbox settings */
     display: flex;
     flex-wrap: wrap; /* Allows items to wrap to next line */
     justify-content: center; /* Centers items */
     gap: 20px; /* Space between cards */
 }
 
-/* CHANGED: Adjusted width to fit side-by-side */
-section#Certificates ul li {
-    background-color: rgba(255, 255, 255, 0.6);
-    /* Flex-basis: 300px means it aims to be 300px wide, but will grow/shrink to fit */
-    flex: 1 1 300px; 
-    max-width: 350px; /* Prevents them from getting too huge on wide screens */
-    margin: 0; /* Margin is handled by 'gap' now */
-    
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
 
 section#Certificates ul li h2 {
     font-size: 18px;
@@ -239,6 +221,39 @@ section#Certificates ul li h2 {
     justify-content: center;
 }
 
+.cert-treadmill{
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.cert-track{
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: treadmill 25s linear infinite;
+}
+.cert-treadmill:hover .cert-track{
+    animation-play-state: paused;
+}
+.cert-card{
+    min-width:320px;
+    max-width: 320px;
+    background-color:var(--card-light) ;
+    border: 1px solid var(--primary);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(15,3,38,0.15);
+    transition: transform 0.3s ease,box-shadow 0.35s ease;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.cert-card:hover{
+    transform:scale(1.05);
+    box-shadow: 0 14px 30px rgba(15,3,38,0.25);
+}
+
 /* Certificate Images */
 .imager1 {
     width: 100%;
@@ -246,11 +261,11 @@ section#Certificates ul li h2 {
     height: 200px; /* Reduced height slightly for better card look */
     object-fit: cover; 
     border-radius: 8px;
-    border: 2px solid #0F0326;
-    display: block;
-    transition: transform 0.3s ease;
+    border: 1px solid var(--primary);
 }
-
+@keyframes treadmill{
+    from{transform: translateX(0);}to{transform:translateX(-50%);}
+}
 .imager1:hover {
     transform: scale(1.03);
     cursor: pointer;
@@ -262,7 +277,6 @@ section#Certificates ul li h2 {
     height: 200px;
     object-fit: cover; 
     border-radius: 8px;
-    border: 2px solid #0F0326;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -276,63 +290,128 @@ section#Certificates ul li h2 {
    8. SKILLS SECTION
    =========================== */
 section#skills {
-    background-color: #E65F5C;
-    color: #F5F7DC;
-    border: 2px solid #0F0326;
+    background: linear-gradient(135deg,#E65F5C,#31146a);
+    color: var(--bg-light);
+    min-height:100vh;
     text-align: center;
+    display: grid;
+    
+    place-items: center;
+}
+#skills .carousel23{
+perspective: 1200px;
 }
 
-section#skills h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
+#skills h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-#skills ul {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-#skills ul li {
+#skills .ring {
+    position: relative;
     list-style: none;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
-    border-radius: 25px; 
-    font-size: 16px;
-    transition: transform 0.2s, background-color 0.2s;
+    animation: spin 20s linear infinite;
+    transform-style: preserve-3d;
+     width: 440px;
+     height: 300px;
+     padding: 0;
+     margin: 0;
 }
 
-#skills ul li:hover {
-    transform: translateY(-3px);
-    background-color: #FFFF82;
+ #skills .headings {
+    position: absolute;
+    list-style: none;
+    padding: 18px;
+    place-items: center;
+   width: 320px;
+   height: auto;
+   background-color: var(--card-light);
+   color: var(--primary);
+   text-align: left;
+   border: 1px solid var(--primary);
+    border-radius: 16px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transform-style: preserve-3d;
+    
+}
+
+#skills .headings > strong{
+    color: var(--secondary);
+ display: block;
+ margin-bottom: 12px;
+ font-size: 16px;
+ letter-spacing: 1px;
+}
+.headings:nth-child(1){
+    transform: rotateY(0deg)  translateZ(247px);
+}
+.headings:nth-child(2){
+    transform: rotateY(72deg) translateZ(247px);
+}
+.headings:nth-child(3){
+    transform: rotateY(144deg) translateZ(247px);
+}
+.headings:nth-child(4){
+    transform: rotateY(216deg) translateZ(247px);
+}
+.headings:nth-child(5){
+    transform: rotateY(288deg) translateZ(247px) ;
+}
+
+#skills .headings:hover {
+    background-color: #ffffff;
     color: #0F0326;
-text-shadow: 0px 0px 1px #0F0326;
     cursor: pointer;
+}
+
+ #skills.panel{
+    list-style: none;
+    margin: 0;
+    padding:0;
+   
+}
+
+#skills .panel li{
+
+    background-color:transparent;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-size: 13px;
+    color: var(--primary);
+    border-bottom:1px solid rgba(15,3,38,0.15);
+}
+
+@keyframes spin{
+    from{ transform: rotateY(0deg);} to {transform: rotateY(360deg);}
 }
 
 /* ===========================
    9. CONTACT SECTION
    =========================== */
 section#contact {
-    background-color: #5a4583;
+    background-color: #31146a;
     background-image: url(/public/ger.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     color: #F5F7DC;
-    border: 2px solid #E65F5C;
     text-align: center;
     padding: 40px 20px;
+    place-items: center;
 }
 
 section#contact h1 {
     font-size: 28px;
     color: #FFFF82;
 }
-
+section#contact .container h2 {
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #FFFF82;
+}
 section#contact p {
     font-size: 18px;
     margin: 15px 0;
@@ -342,7 +421,6 @@ section#contact a {
     color: #FFFF82; 
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s;
 }
 
@@ -350,11 +428,12 @@ section#contact a:hover {
     border-bottom: 2px solid #FFFF82;
 }
 
+
 /* ===========================
    10. FOOTER
    =========================== */
 footer#main-footer {
-    background-color: #0a0a0a;
+    background-color: var(--primary);
     color: #888;
     text-align: center;
     padding: 20px 0;
@@ -402,7 +481,7 @@ footer#main-footer {
    12. ACTIVE STATE (For Javascript)
    =========================== */
 nav#navbar ul li.active {
-    background-color: #FFFF82;
+    background-color: var(--accent);
     transform: translateY(-2px);
     border-color: #dfdf3b;
     box-shadow: 0 0 10px #FFFF82; /* Glowing effect */
@@ -412,38 +491,49 @@ nav#navbar ul li.active a {
     color: #0F0326; /* Dark text on yellow background */
 }
 
+
 /* ===========================
-   PROJECTS SECTION - UPDATED WITH IMAGES & BUTTONS
+   PROJECTS SECTION - CAROUSEL VERSION
    =========================== */
 section#Projects {
-    background-color: #D3B8AE;
+    background-color: var(--bg-light);
     color: #0F0326;
-    border: 2px solid #0F0326;
 }
 
-section#Projects h1 {
+section#Projects h2 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 30px;
     text-transform: uppercase;
-    border-bottom: 2px solid #0F0326;
     display: inline-block;
     width: 100%;
     padding-bottom: 10px;
 }
 
+/* Carousel Wrapper */
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 60px; /* Space for navigation buttons */
+    margin: 20px 0;
+}
+
+/* Projects UL - Modified for Carousel */
 section#Projects ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; /* CHANGED: No wrapping */
     gap: 30px;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+    width: 100%;
 }
 
 section#Projects ul li {
-    background-color: rgba(255, 255, 255, 0.7);
-    flex: 1 1 320px;
+    background-color: var(--card-light);
+    color: var(--primary);
+    flex: 0 0 380px; /* CHANGED: Fixed width, no grow/shrink */
     max-width: 380px;
     margin: 0;
     padding: 0;
@@ -461,6 +551,86 @@ section#Projects ul li:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* Carousel Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(15, 3, 38, 0.8);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.carousel-btn:hover {
+    background-color: #E65F5C;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background-color: rgba(15, 3, 38, 0.4);
+}
+
+.carousel-btn:disabled:hover {
+    transform: translateY(-50%) scale(1);
+    background-color: rgba(15, 3, 38, 0.4);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Carousel Dots Indicator */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 10px 0;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(15, 3, 38, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.carousel-dot:hover {
+    background-color: rgba(15, 3, 38, 0.6);
+    transform: scale(1.2);
+}
+
+.carousel-dot.active {
+    background-color: #E65F5C;
+    border-color: #0F0326;
+    transform: scale(1.3);
+}
+
 /* Project Image Container */
 .project-image {
     width: 100%;
@@ -475,7 +645,7 @@ section#Projects ul li:hover {
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit:contain;
+    object-fit: contain;
     transition: transform 0.3s ease;
     align-items: center;
 }
@@ -485,7 +655,7 @@ section#Projects ul li:hover .project-image img {
 }
 
 /* Project Content */
-section#Projects ul li h2 {
+section#Projects ul li h3 {
     font-size: 20px;
     margin: 20px 20px 10px 20px;
     color: #0F0326;
@@ -533,8 +703,8 @@ section#Projects ul li p {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px 20px !important;
-    min-height: 250px !important;
+    padding: 20px 10px !important;
+    min-height: 550px !important; /* CHANGED: Match other cards */
     box-shadow: 0 6px 12px rgba(0,0,0,0.1) !important;
 }
 
@@ -543,7 +713,7 @@ section#Projects ul li p {
     margin-bottom: 15px;
 }
 
-.coming-soon-card h2 {
+.coming-soon-card h3 {
     margin: 10px 0;
     font-size: 18px;
 }
@@ -552,30 +722,102 @@ section#Projects ul li p {
     font-style: italic;
     color: #666;
     font-size: 14px;
-    margin: 5px 0;
+    margin: 10px 10px;
 }
 
-/* Mobile Responsiveness for Projects */
+/* Fix for nested lists (Key Features) */
+section#Projects ul li article ul {
+    padding-left: 20px;
+    margin: 10px 20px 15px 20px;
+    
+    text-align: left;
+    display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Vertical alignment inside container */
+  height: 200px; /* Example height */
+  list-style: none; /* Remove bullets if needed */
+  
+}
+
+section#Projects ul li article ul li {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+    padding: 5px;
+  background: lightblue;
+    flex: none;
+    min-height: max-content;
+    list-style-type: disc;
+    list-style-position: outside;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+section#Projects ul li article ul li:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Mobile Responsiveness for Carousel */
 @media screen and (max-width: 768px) {
+    .carousel-wrapper {
+        padding: 0 50px; /* Less padding on mobile */
+    }
+
     section#Projects ul li {
+        flex: 0 0 100%; /* Show one card at a time on mobile */
         max-width: 100%;
-        flex-basis: 100%;
     }
     
     .project-image {
         height: 200px;
     }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .carousel-btn.prev {
+        left: 5px;
+    }
+
+    .carousel-btn.next {
+        right: 5px;
+    }
+
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
 }
-html {
-  scroll-behavior: smooth;
-}
-.f1,.f2,.f3,.f4,.f5,.f6,.f7,.f8,.f9{
+
+
+.f1,.f2,.f3,.f4,.f5{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.f10,.f11,.f12,.f13,.f14,.f15{
+.f6,.f7,.f8,.f9,.f10{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.f11,.f12,.f13,.f14,.f15{
   font-family: 'Courier New', Courier, monospace;
+}
+.f16,.f17,.f18,.f19{
+    font-family: Arial, Helvetica, sans-serif;
 }
 .headings {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #0F0326;}
+
+  #skills,#skills .carousel23,#skills .ring{
+    overflow: visible;
+  }
+  #skills .Additional{
+    background-color:#ce4646 ;
+    border-radius: 20px;
+    letter-spacing: 0.1em;
+    width: auto;
+  }
