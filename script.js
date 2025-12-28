@@ -226,3 +226,127 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// ===========================
+// CONTACT FORM FUNCTIONALITY
+// ===========================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                showStatus('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            if (!isValidEmail(email)) {
+                showStatus('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Create mailto link (since you don't have a backend)
+            // This will open the user's email client
+            const mailtoLink = `mailto:rajlakhera18@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            )}`;
+            
+            // Option 1: Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showStatus('Opening your email client... If nothing happens, please email me directly at rajlakhera18@gmail.com', 'success');
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                contactForm.reset();
+                hideStatus();
+            }, 3000);
+            
+            // =====================================================
+            // OPTIONAL: If you want to integrate with a service like:
+            // - Formspree (https://formspree.io/)
+            // - EmailJS (https://www.emailjs.com/)
+            // - Google Forms
+            // Replace the above code with API integration
+            // =====================================================
+            
+            /* EXAMPLE WITH FORMSPREE:
+            
+            fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    showStatus('Thank you! Your message has been sent successfully.', 'success');
+                    contactForm.reset();
+                } else {
+                    showStatus('Oops! Something went wrong. Please try again.', 'error');
+                }
+            })
+            .catch(error => {
+                showStatus('Oops! Something went wrong. Please try again.', 'error');
+                console.error('Error:', error);
+            });
+            
+            */
+        });
+    }
+    
+    // Email validation function
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    // Show status message
+    function showStatus(message, type) {
+        formStatus.textContent = message;
+        formStatus.className = 'form-status ' + type;
+    }
+    
+    // Hide status message
+    function hideStatus() {
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+    }
+    
+    // Add input validation feedback
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            if (this.value.trim() === '' && this.hasAttribute('required')) {
+                this.style.borderColor = '#f44336';
+            } else {
+                this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            }
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                this.style.borderColor = '#4CAF50';
+            }
+        });
+    });
+});
