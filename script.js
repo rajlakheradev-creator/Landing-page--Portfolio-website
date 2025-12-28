@@ -1,8 +1,44 @@
 // ===========================
+// HAMBURGER MENU FUNCTIONALITY
+// ===========================
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            // Toggle hamburger animation
+            hamburger.classList.toggle('active');
+            
+            // Toggle menu visibility
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a nav link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+});
+
+// ===========================
 // PROJECTS CAROUSEL FUNCTIONALITY
 // ===========================
-
-// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
     // Get carousel elements
@@ -17,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = carousel.querySelectorAll('li');
     const totalSlides = slides.length;
     let currentSlide = 0;
-    let slidesPerView = 1; // Will be calculated based on screen size
+    let slidesPerView = 1;
     
     // Calculate how many slides are visible at once
     function calculateSlidesPerView() {
@@ -28,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (viewportWidth <= 1024) {
             slidesPerView = 2; // Tablet: 2 cards
         } else {
-            slidesPerView = 2; // Desktop: 2 cards (adjust to 3 if you prefer)
+            slidesPerView = 2; // Desktop: 2 cards
         }
         
         return slidesPerView;
@@ -41,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Generate dots based on number of slides
     function generateDots() {
-        dotsContainer.innerHTML = ''; // Clear existing dots
+        dotsContainer.innerHTML = '';
         const maxSlide = getMaxSlide();
         
         for (let i = 0; i <= maxSlide; i++) {
@@ -50,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (i === 0) dot.classList.add('active');
             dot.setAttribute('data-slide', i);
             
-            // Add click event to dot
             dot.addEventListener('click', function() {
                 goToSlide(parseInt(this.getAttribute('data-slide')));
             });
@@ -71,18 +106,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Update button states (disable at start/end)
+    // Update button states
     function updateButtons() {
         const maxSlide = getMaxSlide();
         
-        // Disable prev button at start
         if (currentSlide === 0) {
             prevBtn.disabled = true;
         } else {
             prevBtn.disabled = false;
         }
         
-        // Disable next button at end
         if (currentSlide >= maxSlide) {
             nextBtn.disabled = true;
         } else {
@@ -94,33 +127,29 @@ document.addEventListener('DOMContentLoaded', function() {
     function goToSlide(slideIndex) {
         const maxSlide = getMaxSlide();
         
-        // Ensure slideIndex is within bounds
         if (slideIndex < 0) slideIndex = 0;
         if (slideIndex > maxSlide) slideIndex = maxSlide;
         
         currentSlide = slideIndex;
         
-        // Calculate slide width (card width + gap)
         const slideWidth = slides[0].offsetWidth;
-        const gap = 30; // Match your CSS gap
+        const gap = 30;
         const moveAmount = -(currentSlide * (slideWidth + gap));
         
-        // Apply transform
         carousel.style.transform = `translateX(${moveAmount}px)`;
         
-        // Update UI
         updateButtons();
         updateDots();
     }
     
-    // Previous button click
+    // Previous button
     prevBtn.addEventListener('click', function() {
         if (currentSlide > 0) {
             goToSlide(currentSlide - 1);
         }
     });
     
-    // Next button click
+    // Next button
     nextBtn.addEventListener('click', function() {
         const maxSlide = getMaxSlide();
         if (currentSlide < maxSlide) {
@@ -145,17 +174,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const oldSlidesPerView = slidesPerView;
             calculateSlidesPerView();
             
-            // If slides per view changed, regenerate dots and reset position
             if (oldSlidesPerView !== slidesPerView) {
                 generateDots();
-                // Adjust current slide if needed
                 const maxSlide = getMaxSlide();
                 if (currentSlide > maxSlide) {
                     currentSlide = maxSlide;
                 }
                 goToSlide(currentSlide);
             } else {
-                // Just recalculate position
                 goToSlide(currentSlide);
             }
         }, 250);
@@ -166,18 +192,15 @@ document.addEventListener('DOMContentLoaded', function() {
         calculateSlidesPerView();
         generateDots();
         updateButtons();
-        goToSlide(0); // Start at first slide
+        goToSlide(0);
     }
     
-    // Start the carousel
     initCarousel();
-    
 });
 
 // ===========================
 // NAVIGATION ACTIVE STATE
 // ===========================
-
 const sections = document.querySelectorAll('section');
 const navLi = document.querySelectorAll('nav ul li');
 
@@ -188,21 +211,15 @@ window.addEventListener('scroll', () => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        // Logic to check which section is currently in view
-        // "- 200" is a buffer so the highlight changes slightly before the section hits the very top
         if (pageYOffset >= (sectionTop - 200)) {
             current = section.getAttribute('id');
         }
     });
 
-    // Loop through nav items to add/remove the "active" class
     navLi.forEach(li => {
-        // Remove 'active' class from all items first
         li.classList.remove('active');
         
-        // Check if the <a> tag inside the <li> matches the current section ID
         if (li.querySelector('a').getAttribute('href').includes(current)) {
-            // Add 'active' class to the matching item
             if(current !== "") {
                 li.classList.add('active');
             }
